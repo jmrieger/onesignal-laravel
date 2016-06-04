@@ -1,0 +1,30 @@
+{
+  "name": "jmrieger/onesignal-laravel",
+  "description": "OneSignal Push Wrapper For Illuminate",
+  "keywords": ["onesignal", "webpush", "push", "laravel", "laravel 5","lumen"],
+  "type": "library",
+  "require": {
+    "php": "^7.*",
+    "guzzlehttp/guzzle": "^6.2",
+    "illuminate/support": "4.*|5.*",
+    "symfony/psr-http-message-bridge": "^0.2.0"
+  },
+  "require-dev": {
+    "vlucas/phpdotenv": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "jmrieger\\OneSignal\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joseph Rieger",
+      "email": "jmrieger@mtu.edu",
+      "homepage": "http://joerieger.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
