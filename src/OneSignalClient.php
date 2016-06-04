@@ -512,7 +512,7 @@ class OneSignalClient
     }
 
     /**
-     * Increment the device's total session length
+     * Increment the Player's total session length
      * @param array $data Session data
      * @return \Psr\Http\Message\ResponseInterface OneSignal API response
      * @throws OneSignalException

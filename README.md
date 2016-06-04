@@ -47,7 +47,46 @@ ONESIGNAL_USER_AUTH_KEY=
 
 ## Usage
 
+There is a function for each of the OneSignal API calls.  They are broken down here.
 
+**Note:** In all instances where an $app_id is asked for, omitting it will grab the default OneSignal App ID specified in the .env file
+
+### Apps
+getApps() - Get all Apps for the user
+
+getApp( $app_id ) - Get the given App
+
+postapp( $data ) - Create a new App
+
+putApp( $app_id, $data ) - Update an App
+
+### Players
+getPlayers( $app_id, $limit, $offset ) - Get Players from an App
+
+getPlayer( $id ) - Get Player of the given ID
+
+postPlayer ( $data, $app_id ) - Add Player to an App
+
+putPlayer( $data, $app_id ) - Update Player object for an App
+
+postCSVExport( $app_id ) - Get a CSV dump of all Players for an App
+
+postPlayerOnSession( $data ) - Start a new device session for this Player
+
+postPlayerOnPurchase( $data ) - Track a new purchase for this Player
+
+postPlayerOnFocus( $data ) - Increment the Players total session length
+
+### Notifications
+getNotifications( $app_id, $limit, $offset ) - Get all Notifications for an App
+
+getNotification( $id,  $app_id ) - Get a Notification from an App
+
+postNotification( $data, $app_id ) - Add a Notification to an App
+
+putNotificationTrackOpen( $id, $app_id, $opened ) - Track whether a Notification was opened
+
+deleteNotification( $id, $app_id ) - Delete a Notification from an App
 
 ## References
 The official OneSignal API documentation is listed here:
