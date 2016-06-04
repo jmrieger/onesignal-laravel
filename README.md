@@ -9,7 +9,7 @@ This project is a wrapper for the OneSignal v1 API.  It supports all operations 
 Require the package with composer.
 
 ```sh
-composer require Jmrieger/onesignal-laravel
+composer require jmrieger/onesignal-laravel
 composer update
 ```
 
@@ -18,20 +18,20 @@ Update `config/app.php` by adding the following entries.
 ```php
 'providers' => [
 	// ...
-	Jmrieger\OneSignal\OneSignalServiceProvider::class
+	jmrieger\OneSignal\OneSignalServiceProvider::class
 ];
 
 'aliases' => [
    	// ...
-   	'OneSignal' => Jmrieger\OneSignal\OneSignalFacade::class
+   	'OneSignal' => jmrieger\OneSignal\OneSignalFacade::class
    ];
 ```
 
 ## Lumen Users:
 update `bootstrap/app.php`, adding the following entry
 ```php
-$app->register( \Jmrieger\OneSignal\OneSignalServiceProvider::class );
-class_alias( 'Jmrieger\OneSignal\OneSignalFacade', 'OneSignal' );
+$app->register( \jmrieger\OneSignal\OneSignalServiceProvider::class );
+class_alias( 'jmrieger\OneSignal\OneSignalFacade', 'OneSignal' );
 ```
 
 

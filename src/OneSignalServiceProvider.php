@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrieger\OneSignal;
+namespace jmrieger\OneSignal;
 
 use Illuminate\Support\ServiceProvider;
 

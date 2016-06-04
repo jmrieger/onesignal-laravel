@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrieger\OneSignal;
+namespace jmrieger\OneSignal;
 
 use GuzzleHttp\Client;
 use Exception;
