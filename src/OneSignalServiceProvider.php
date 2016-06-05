@@ -6,43 +6,44 @@ use Illuminate\Support\ServiceProvider;
 
 class OneSignalServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
+	/**
+	 * Bootstrap the application services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
 
-    }
+	}
 
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        /** @noinspection PhpUndefinedFieldInspection */
-        $this->app->singleton('onesignal', function () {
-            /** @noinspection PhpUndefinedFunctionInspection */
-            /** @noinspection PhpUndefinedFunctionInspection */
-            /** @noinspection PhpUndefinedFunctionInspection */
-            $config = [
-                "app_id"            =>  ( env("ONESIGNAL_APP_ID") ?: "" ),
-                "rest_api_key"      =>  ( env("ONESIGNAL_REST_API_KEY") ?: ""  ),
-                "user_auth_key"     =>  ( env("ONESIGNAL_USER_AUTH_KEY") ?: "" ),
-            ];
+	/**
+	 * Register the application services.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		/** @noinspection PhpUndefinedFieldInspection */
+		$this->app->singleton( 'onesignal', function () {
+			/** @noinspection PhpUndefinedFunctionInspection */
+			/** @noinspection PhpUndefinedFunctionInspection */
+			/** @noinspection PhpUndefinedFunctionInspection */
+			$config = [
+				"app_id"        => ( env( "ONESIGNAL_APP_ID" ) ?: "" ),
+				"rest_api_key"  => ( env( "ONESIGNAL_REST_API_KEY" ) ?: "" ),
+				"user_auth_key" => ( env( "ONESIGNAL_USER_AUTH_KEY" ) ?: "" ),
+			];
 
-            $client = new OneSignalClient($config['app_id'], $config['rest_api_key'], $config['user_auth_key']);
+			$client = new OneSignalClient( $config[ 'app_id' ], $config[ 'rest_api_key' ], $config[ 'user_auth_key' ] );
 
-            return $client;
-        });
-    }
+			return $client;
+		} );
+	}
 
-    public function provides() {
-        return ['onesignal'];
-    }
+	public function provides()
+	{
+		return [ 'onesignal' ];
+	}
 
 
 }
