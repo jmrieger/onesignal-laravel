@@ -219,7 +219,7 @@ class OneSignalClient
             // If we have a required parameter that's not present in the param data, this request is not valid
             if ($required && !array_key_exists($param, $data)) {
                 // Ignore the app_id if it was passed
-                if ($param == 'app_id') {
+                if ($param == 'app_id' && $app_id) {
                     $data[ $param ] = $app_id;
                 } else {
                     if ($param == 'app_id' && $this->appId) {
