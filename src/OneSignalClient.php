@@ -134,9 +134,9 @@ class OneSignalClient
         if ($app_id == '') {
             $app_id = $this->appId;
         }
-        $headers[ 'query' ] = ["id" => $id, "app_id" => $app_id];
+        $headers[ 'query' ] = ["app_id" => $app_id];
 
-        return $this->get("notifications", $headers);
+        return $this->get("notifications/${id}", $headers);
     }
 
     /**
