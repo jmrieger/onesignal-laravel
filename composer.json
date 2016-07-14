@@ -4,7 +4,7 @@
   "keywords": ["onesignal", "webpush", "push", "laravel", "laravel 5","lumen"],
   "type": "library",
   "require": {
-    "php": "7.*|5.4.*",
+    "php": ">=5.4.*",
     "guzzlehttp/guzzle": "^6.2",
     "illuminate/support": "4.*|5.*",
     "symfony/psr-http-message-bridge": "^0.2.0"
