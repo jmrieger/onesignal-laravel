@@ -52,41 +52,56 @@ There is a function for each of the OneSignal API calls.  They are broken down h
 **Note:** In all instances where an $app_id is asked for, omitting it will grab the default OneSignal App ID specified in the .env file
 
 ### Apps
-getApps() - Get all Apps for the user
 
-getApp( $app_id ) - Get the given App
+##### getApps() - Get all Apps for the user
+```
+$response = OneSignal::getApps();
+```
 
-postapp( $data ) - Create a new App
+##### getApp( $app_id ) - Get the given App
 
-putApp( $app_id, $data ) - Update an App
+##### postapp( $data ) - Create a new App
+
+##### putApp( $app_id, $data ) - Update an App
 
 ### Players
-getPlayers( $app_id, $limit, $offset ) - Get Players from an App
 
-getPlayer( $id ) - Get Player of the given ID
+##### getPlayers( $app_id, $limit, $offset ) - Get Players from an App
 
-postPlayer ( $data, $app_id ) - Add Player to an App
+##### getPlayer( $id ) - Get Player of the given ID
 
-putPlayer( $data, $app_id ) - Update Player object for an App
+##### postPlayer ( $data, $app_id ) - Add Player to an App
 
-postCSVExport( $app_id ) - Get a CSV dump of all Players for an App
+##### putPlayer( $data, $app_id ) - Update Player object for an App
 
-postPlayerOnSession( $data ) - Start a new device session for this Player
+##### postCSVExport( $app_id ) - Get a CSV dump of all Players for an App
 
-postPlayerOnPurchase( $data ) - Track a new purchase for this Player
+##### postPlayerOnSession( $data ) - Start a new device session for this Player
 
-postPlayerOnFocus( $data ) - Increment the Players total session length
+##### postPlayerOnPurchase( $data ) - Track a new purchase for this Player
+
+##### postPlayerOnFocus( $data ) - Increment the Players total session length
 
 ### Notifications
-getNotifications( $app_id, $limit, $offset ) - Get all Notifications for an App
 
-getNotification( $id,  $app_id ) - Get a Notification from an App
+##### getNotifications( $app_id, $limit, $offset ) - Get all Notifications for an App
 
-postNotification( $data, $app_id ) - Add a Notification to an App
+##### getNotification( $id,  $app_id ) - Get a Notification from an App
 
-putNotificationTrackOpen( $id, $app_id, $opened ) - Track whether a Notification was opened
+##### postNotification( $data, $app_id ) - Add a Notification to an App
+```
+$response = OneSignal::postNotification([
+    "tags"                  =>  [ ["key" => "myKey", "relation" => "=", "value" => 1 ] ],
+    "contents"              => ["en" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et iaculis enim. Sed egestas porttitor laoreet."],
+    "headings"              => ["en" => "Aliquam consectetur odio sed"],
+]);
+```
 
-deleteNotification( $id, $app_id ) - Delete a Notification from an App
+##### putNotificationTrackOpen( $id, $app_id, $opened ) - Track whether a Notification was opened
+
+##### deleteNotification( $id, $app_id ) - Delete a Notification from an App
+
+
 
 ## References
 The official OneSignal API documentation is listed here:
