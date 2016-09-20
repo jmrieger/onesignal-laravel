@@ -174,6 +174,7 @@ class OneSignalClient
             "include_chrome_web_reg_ids" => false,
             "app_ids"                    => false,
             "tags"                       => false,
+            "filters"                    => false,
             "ios_badgeType"              => false,
             "ios_badgeCount"             => false,
             "ios_sound"                  => false,
