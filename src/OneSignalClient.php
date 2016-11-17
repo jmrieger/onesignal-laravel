@@ -242,7 +242,7 @@ class OneSignalClient
         $headers[ 'json' ] = $clean_data;
 
         // Return the Response from the OneSignal API
-        return $this->post("/notifications", $headers);
+        return $this->post("notifications", $headers);
     }
 
     /**
@@ -255,12 +255,12 @@ class OneSignalClient
      */
     public function putNotificationTrackOpen($id, $app_id = '', $opened = true)
     {
-        $headers = $this->headerInit();
+        $headers = $this->headerInit(false,true);
         if ($app_id == '') {
             $app_id = $this->appId;
         }
-        $headers[ 'app_id' ] = $app_id;
-        $headers[ 'opened' ] = $opened;
+        $headers[ 'json' ][ 'app_id' ] = $app_id;
+        $headers[ 'json' ][ 'opened' ] = $opened;
 
         return $this->put("notifications/${id}", $headers);
     }
@@ -274,7 +274,7 @@ class OneSignalClient
      */
     public function deleteNotification($id, $app_id = '')
     {
-        $headers = $this->headerInit(false, true);
+        $headers = $this->headerInit( false, true );
         if ($app_id == '') {
             $app_id = $this->appId;
         }
