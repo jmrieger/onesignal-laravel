@@ -439,7 +439,7 @@ class OneSignalClient
         $headers = $this->headerInit();
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/players", $headers);
+        return $this->put("players/" . $clean_data[ 'id' ], $headers);
     }
 
     /**
