@@ -379,7 +379,7 @@ class OneSignalClient
         $headers = $this->headerInit();
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/players", $headers);
+        return $this->post("players", $headers);
     }
 
     /**
@@ -439,7 +439,7 @@ class OneSignalClient
         $headers = $this->headerInit();
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/players", $headers);
+        return $this->put("players/" . $clean_data[ 'id' ], $headers);
     }
 
     /**
@@ -494,7 +494,7 @@ class OneSignalClient
         $headers = $this->headerInit();
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/players/" . $clean_data[ 'id' ] . "/on_session", $headers);
+        return $this->post("players/" . $clean_data[ 'id' ] . "/on_session", $headers);
     }
 
     /**
@@ -540,7 +540,7 @@ class OneSignalClient
         $headers = $this->headerInit();
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/players/" . $clean_data[ 'id' ] . "/on_purchase", $headers);
+        return $this->post("players/" . $clean_data[ 'id' ] . "/on_purchase", $headers);
     }
 
     /**
@@ -572,7 +572,7 @@ class OneSignalClient
         $headers = $this->headerInit();
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/players/" . $clean_data[ 'id' ] . "/on_focus", $headers);
+        return $this->post("players/" . $clean_data[ 'id' ] . "/on_focus", $headers);
     }
 
     /*
@@ -646,7 +646,7 @@ class OneSignalClient
         $headers = $this->headerInit(true);
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/apps", $headers);
+        return $this->post("apps", $headers);
     }
 
     /**
@@ -698,7 +698,7 @@ class OneSignalClient
         $headers = $this->headerInit(true);
         $headers[ 'json' ] = $clean_data;
 
-        return $this->post("/apps", $headers);
+        return $this->post("apps", $headers);
     }
 
 
