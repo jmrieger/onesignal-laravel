@@ -214,6 +214,11 @@ class OneSignalClient
 
         ];
 
+	// Void requirement of 'contents' if 'template_id' is set
+        if(array_key_exists('template_id', $data) && !empty($data['template_id'])) {
+            $valid_params['contents'] = false;
+        }
+
         $clean_data = [];
 
         // Loop on all of the available parameters (we're sanitizing our data)
