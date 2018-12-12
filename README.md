@@ -1,5 +1,8 @@
 #  OneSignal Push Notifications for Laravel 5
 
+# WARNING!
+This project is not actively maintained as of 2018/12/12. I'd strongly urge you to consider a package that is, like `berkayk/onesignal-laravel`
+
 ## Introduction
 
 This project is a wrapper for the OneSignal v1 API.  It supports all operations currently supported by the API.
