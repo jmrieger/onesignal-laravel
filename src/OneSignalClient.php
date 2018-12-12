@@ -211,7 +211,7 @@ class OneSignalClient
             "adm_group_message"          => false,
             "ttl"                        => false,
             "priority"                   => false,
-	    "ios_attachments"            => false,
+            "ios_attachments"            => false,
 
         ];
 
