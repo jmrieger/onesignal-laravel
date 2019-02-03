@@ -41,6 +41,11 @@ class_alias( 'jmrieger\OneSignal\OneSignalFacade', 'OneSignal' );
 ## Configuration
 There are 3 settings that need to be updated: your default OneSignal app ID, the REST API key, and the User Auth Key.  All of these items can be found in your Control Panel on the OneSignal site.
 
+First, publish the onesignal config: 
+```
+php artisan vendor:publish
+```
+
 Place the 3 keys into your .env file, as such:
 ```
 ONESIGNAL_APP_ID=
